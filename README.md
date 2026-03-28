@@ -1,7 +1,7 @@
 # Flurry
 
 [![CI](https://github.com/temikus/flurry/actions/workflows/ci.yml/badge.svg)](https://github.com/temikus/flurry/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/flurry)](https://www.npmjs.com/package/flurry)
+[![npm](https://img.shields.io/npm/v/@temikus/flurry)](https://www.npmjs.com/package/@temikus/flurry)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 Generate unique snowflake SVGs from cryptographic strings — like SSH randomart, but prettier.
@@ -13,13 +13,13 @@ Every input produces a deterministic, visually distinct snowflake with true 6-fo
 ## Install
 
 ```bash
-npm install flurry
+npm install @temikus/flurry
 ```
 
 ## Usage
 
 ```typescript
-import { generateSnowflake, generateSnowflakeSync } from "flurry";
+import { generateSnowflake, generateSnowflakeSync } from "@temikus/flurry";
 
 // Async (uses Web Crypto API)
 const svg = await generateSnowflake("SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8");
@@ -39,7 +39,7 @@ const svg = await generateSnowflake(input, {
 ### Browser (UMD)
 
 ```html
-<script src="https://unpkg.com/flurry"></script>
+<script src="https://unpkg.com/@temikus/flurry"></script>
 <script>
   Flurry.generateSnowflakeSync("my-key", { size: 200 });
 </script>
