@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flurry — Unique snowflakes for unique keys</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="snowfall" id="snowfall"></div>
+
+    <main>
+      <header>
+        <h1>&#10052; Flurry</h1>
+        <p class="tagline">Unique snowflakes for unique keys</p>
+        <p class="subtitle">Works with any cryptographic string &mdash; hashes, fingerprints, addresses, public keys</p>
+      </header>
+
+      <section class="card">
+        <div class="input-row">
+          <textarea
+            id="input"
+            rows="2"
+            placeholder="Enter any string..."
+            spellcheck="false"
+          >SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8</textarea>
+          <button id="generate" class="generate-btn" title="Generate a random string">
+            <span class="dice">&#9861;</span>
+          </button>
+        </div>
+
+        <div class="preview" id="preview"></div>
+
+        <div class="actions">
+          <button id="copy-svg" title="Copy SVG markup">Copy SVG</button>
+          <button id="download-svg" title="Download as .svg file">Download</button>
+          <button id="copy-datauri" title="Copy as data: URI">Data URI</button>
+        </div>
+      </section>
+
+      <section class="examples">
+        <p>Try these:</p>
+        <div class="example-buttons">
+          <button data-value="SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8">SSH Fingerprint</button>
+          <button data-value="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa">Bitcoin Genesis</button>
+          <button data-value="0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045">Ethereum (vitalik.eth)</button>
+          <button data-value="550e8400-e29b-41d4-a716-446655440000">UUID</button>
+          <button data-value="B523 27F1 71CE 0E81 30D7 A318 C8D8 CDA8 2E8A 8653">PGP Fingerprint</button>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid" id="gallery"></div>
+      </section>
+
+      <footer>
+        <p>
+          <a href="https://github.com/temikus/randomart-snowflake">GitHub</a> &middot;
+          <code>npm install flurry</code> &middot;
+          Apache 2.0
+        </p>
+      </footer>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

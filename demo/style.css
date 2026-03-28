@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0a1628;
+  --bg-card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #e0e8f0;
+  --text-dim: #7a8da6;
+  --accent: #a8d8ea;
+  --accent-hover: #c8ecf8;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(170deg, #0a1628 0%, #1a2744 40%, #0d1f3c 100%);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Falling snow */
+.snowfall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.snowflake-particle {
+  position: absolute;
+  top: -10px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+  animation: fall linear infinite;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+/* Layout */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.tagline {
+  color: var(--text-dim);
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+/* Card */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+textarea {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: var(--text);
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.85rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  border-color: var(--accent);
+}
+
+.generate-btn {
+  background: rgba(168, 216, 234, 0.08);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+  flex-shrink: 0;
+}
+
+.generate-btn:hover {
+  background: rgba(168, 216, 234, 0.18);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.generate-btn:active {
+  transform: scale(0.95);
+}
+
+.generate-btn .dice {
+  font-size: 1.5rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* Preview */
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  min-height: 300px;
+}
+
+.preview svg {
+  width: 280px;
+  height: 280px;
+  filter: drop-shadow(0 0 20px rgba(168, 216, 234, 0.3));
+  transition: filter 0.3s;
+}
+
+.preview svg:hover {
+  filter: drop-shadow(0 0 30px rgba(168, 216, 234, 0.5));
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.actions button {
+  background: rgba(168, 216, 234, 0.1);
+  border: 1px solid rgba(168, 216, 234, 0.25);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.actions button:hover {
+  background: rgba(168, 216, 234, 0.2);
+  border-color: var(--accent);
+}
+
+.actions button.copied {
+  background: rgba(100, 200, 100, 0.2);
+  border-color: rgba(100, 200, 100, 0.5);
+  color: #90ee90;
+}
+
+/* Examples */
+.examples {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.examples p {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.example-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.example-buttons button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+
+.example-buttons button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Gallery */
+.gallery {
+  margin-top: 3rem;
+}
+
+.gallery h2 {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.gallery-item svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(168, 216, 234, 0.2));
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.gallery-item svg:hover {
+  filter: drop-shadow(0 0 16px rgba(168, 216, 234, 0.4));
+  transform: scale(1.05);
+}
+
+.gallery-item span {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-align: center;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  main {
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .preview svg {
+    width: 220px;
+    height: 220px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+}

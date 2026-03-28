@@ -1,0 +1,54 @@
+{
+  "name": "flurry",
+  "version": "0.1.0",
+  "description": "Generate unique snowflake SVGs from cryptographic strings — like SSH randomart, but prettier",
+  "type": "module",
+  "main": "./dist/flurry.cjs",
+  "module": "./dist/flurry.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/flurry.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/flurry.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --config vite.demo.config.ts",
+    "build": "vite build",
+    "build:demo": "vite build --config vite.demo.config.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "snowflake",
+    "randomart",
+    "fingerprint",
+    "visualization",
+    "svg",
+    "cryptography",
+    "hash"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/temikus/randomart-snowflake"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^3.0.0"
+  }
+}
