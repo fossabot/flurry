@@ -1,6 +1,6 @@
 # Flurry
 
-Snowflake SVG generator library. Takes any string, SHA-256 hashes it, maps bytes to snowflake growth parameters, generates geometry, renders SVG with 6-fold symmetry.
+Snowflake SVG generator library for visual key identification. Takes any string (SSH fingerprints, wallet addresses, API keys, etc.), SHA-256 hashes it, maps bytes to snowflake growth parameters, generates geometry, renders SVG with 6-fold symmetry. Purpose: let users spot similar or different keys at a glance without comparing long hex strings character by character.
 
 ## Architecture
 

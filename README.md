@@ -6,7 +6,7 @@
 
 Generate unique snowflake SVGs from cryptographic strings — like SSH randomart, but prettier.
 
-Every input produces a deterministic, visually distinct snowflake with true 6-fold symmetry (D6 dihedral group), just like real ice crystals. Same input always gives the same snowflake. Different inputs give different snowflakes.
+Spot similar keys at a glance. Every input produces a deterministic, visually distinct snowflake with true 6-fold symmetry (D6 dihedral group), just like real ice crystals. Same input always gives the same snowflake. Different inputs give different snowflakes. Display them next to SSH fingerprints, wallet addresses, or API keys so users can quickly tell them apart without comparing long hex strings character by character.
 
 **[Live Demo](https://temikus.github.io/flurry/)**
 
