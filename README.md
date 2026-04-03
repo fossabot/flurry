@@ -3,6 +3,7 @@
 [![CI](https://github.com/temikus/flurry/actions/workflows/ci.yml/badge.svg)](https://github.com/temikus/flurry/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/@temikus/flurry)](https://www.npmjs.com/package/@temikus/flurry)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FTemikus%2Fflurry.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FTemikus%2Fflurry?ref=badge_shield)
 
 Generate unique snowflake SVGs from cryptographic strings — like SSH randomart, but prettier.
 
@@ -76,3 +77,6 @@ just lint       # Type-check
 ## License
 
 Apache 2.0
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FTemikus%2Fflurry.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FTemikus%2Fflurry?ref=badge_large)
